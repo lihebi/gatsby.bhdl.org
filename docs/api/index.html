@@ -55,7 +55,14 @@
 <p><a href="#bhdl-api-reference">BHDL API Reference</a></p>
 <ul>
 <li>
-<p><a href="#grow-your-circuit-withmake-circuit">grow your circuit with<code class="language-text">make-circuit</code></a></p>
+<p><a href="#a-formal-overview-of-syntax">A (formal) overview of syntax</a></p>
+<ul>
+<li><a href="#the-syntax">The syntax</a></li>
+<li><a href="#the-semantics">The semantics</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#grow-your-circuit-withmake-circuit">Grow your circuit with<code class="language-text">make-circuit</code></a></p>
 <ul>
 <li><a href="#connection-syntax-and-semantics">Connection syntax and semantics</a></li>
 <li><a href="#layout-co-design">Layout co-design</a></li>
@@ -65,7 +72,101 @@
 </ul>
 </li>
 </ul></div><div><h1 id="bhdl-api-reference" style="position:relative;"><a href="#bhdl-api-reference" aria-label="bhdl api reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BHDL API Reference</h1>
-<h2 id="grow-your-circuit-withmake-circuit" style="position:relative;"><a href="#grow-your-circuit-withmake-circuit" aria-label="grow your circuit withmake circuit permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>grow your circuit with<code class="language-text">make-circuit</code></h2>
+<h2 id="a-formal-overview-of-syntax" style="position:relative;"><a href="#a-formal-overview-of-syntax" aria-label="a formal overview of syntax permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A (formal) overview of syntax</h2>
+<h3 id="the-syntax" style="position:relative;"><a href="#the-syntax" aria-label="the syntax permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The syntax</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/643cc059ece03404084186f46c393402/f680b/syntax.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 150.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAACE3AAAhNwEzWJ96AAADJElEQVRIx42WC3OqMBCF/f+/rr0z9VbqW3wWVF6iFZq730q4idKOmcmAEE72nD27sXc6ncxyuTRFcTLuuFwu8qzQa5ZlJs9z8/HxYQ7Ho7fu+/vb+93jwfV61Q/4mMkAZLfb6XWz2cjcmvF43GxemCRJzNfXlwfKtcdNJYCr1cpEUWTKsjRVVZmuUde1RBmYl5cXEwSBBnIfac/esJhda+c37+xkENFoNDT7/d6U57NuDqNK1rYRuuEeRZ/Pz09PFxeQiPr9voCOzOFwMLPZzISLhchVdANCebvd6q5pmjxQt4BBMFBNrd6dlBlEh/AKLIkgYiLJi6KlDOBkMta1UH5Iyj1lIgQkTTOZqf6OorjddLkMzXA4NIv5XLPdmWVXJzviOFZtoMmHZ4mGZ4ls0jU6KeNFqPJhGIbqv1gySuS844okRM197WS3ifF/hLzEDgg+nU4VAC0xNxHaNVTLYDAwI6E9lGxDn3UeZcS+aRWZQBbPRZ+TUMzzTPW04l+bAljLZM14PNHNKd8HDQFdr9daAUmSalTXa/VjzT6loVKWCKEJZSJzq+W36dnGTkrPim7BfoqmC+whwvv2hXnRp5SJBGS/q3G4wLduI4toU6lECAiWwNRQL8uzgjI3ojFJyOQdbBZSx0enP3pJIYNWQ4o+Ew1tv7ODjbEJm1LLux2lOlJg28o8ylD68/oqtTqRiP2kMM7SsvAgbliL6bHQqrEQEXuAtpajRid2vBec57eSzFUSgGHSSfmmY6q03ZJ6xoe2GbdJqQUMM1MVtn2RJLqyC0bmbaW8SRtbSL33397MXDS0vdE7AsqmowB2uZy9SrFroIo00OVK5vmmTcpPdFhkTz1AuNpe+Vv5tT5EaNoVGQNMe59kjsxChwgA/ducKTgBC03FYtbsXsfWWhaQ9/d39aEFdSsDrQHjGFDryHQ7zQMgAOyMccNwoZQBdI9R3gNI8u7BPA0rzXTSHvTuieYlRdbs9weVBwlcy3gNFrHjhjIRXvQgP+l/HhotWtZ1pRrzdwTrzGZzM5Padv+SeJTJJrvH4sONHqMH2eio91yfabD/ALV2E1mhc4mPAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="syntax"
+        title="syntax"
+        src="/static/643cc059ece03404084186f46c393402/5a190/syntax.png"
+        srcset="/static/643cc059ece03404084186f46c393402/772e8/syntax.png 200w,
+/static/643cc059ece03404084186f46c393402/e17e5/syntax.png 400w,
+/static/643cc059ece03404084186f46c393402/5a190/syntax.png 800w,
+/static/643cc059ece03404084186f46c393402/f680b/syntax.png 1108w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3 id="the-semantics" style="position:relative;"><a href="#the-semantics" aria-label="the semantics permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The semantics</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/71eb1d31365cd57f880a4e916cf4a9ea/906b5/wire.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAACE3AAAhNwEzWJ96AAAB7klEQVQoz21T23LbIBT0//9HX/ohfehlMm3TTjuJ3FiOLVkSQhdAF8DbBUuunSkzCB1Y9ix7YHM+nxF6aG6aUO33cN7HeJ1fx7XdR/e4Db+RwFgLP88QaQrNcWR8C/aMRVliUArFbgfddaiKggs+Jlhxm/AZ2xblnxdIWUAMAl2eo9huA+qqwo0j9KnAKCXKx0eYqkKfZTjfJI4KLSdkXUOTVGkFMw9oucl0PTTVaK3hCfRUoo1Bz7mg3jqLkRYNwwDFudWITQDOBEwz/WNW1SsMVBOyOediX49TlQWy4zEKkLXESDLP9SDq7siLZjRUeeAmvxTlbRmG2WOy9JcJo8o3iHjkyLywd3mGLElgqODWl9D6+oBy/wNduodRLccUp/Q7epktWL9UOVSQgbYG+9dnpMkLsnKH0U+4TdYfPkD8fo/Dxwd6XOD4+QHVz3dQ+Ze7U0RC5x2aucX2+SvkryckVKKcuapU2kBmCcTuG/pKoKxOkPkJ+dMniGNCz6dYmGBVJLSzRdu0l04fQzyY4fJPr4zRLJqDqNtY6VdefkFbslOFPC9Q0vcjixVII+FEk0Ut0DRNJAl94pUIGW9fiedVKXiZa5IZEnueLFQ54NwyXhRSRbhvIUMAhn9r7dWbf8U5o+MLUVyf+Zr+1/4CQUKizhmoDNQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="wire"
+        title="wire"
+        src="/static/71eb1d31365cd57f880a4e916cf4a9ea/5a190/wire.png"
+        srcset="/static/71eb1d31365cd57f880a4e916cf4a9ea/772e8/wire.png 200w,
+/static/71eb1d31365cd57f880a4e916cf4a9ea/e17e5/wire.png 400w,
+/static/71eb1d31365cd57f880a4e916cf4a9ea/5a190/wire.png 800w,
+/static/71eb1d31365cd57f880a4e916cf4a9ea/906b5/wire.png 950w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<hr>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/74b173afc32b2b65bcc47e4e35e590f4/d7ab4/semantics.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 88.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAACE3AAAhNwEzWJ96AAACPUlEQVQ4y52U2baqQAxE+///z+HBCUHAiVEQFeyTHQnXcx5vr9ULsJOqSiWt87Le77cfhkF33/f6tMUZ6/l8+vP57B9d5w+Hg4/j2F+vV91Zlk1xDoDT6eQvl4u/3W4+SRJNaJpGg9v7XYOPx1T20ddVpWBFUfhK3smFiPdheHuHmjRNdQNGQhiGAhrLjiZASCBIklhBICfOciEByyHz9XqpbFQZ8+Px0G9bfOd57suy1HPOnmNM07SKoSWbTwSy67pW5t1u59u2/eUjpICyAcWC9XqtigeNkZJB/rA0ekCgKQAcZQaK39Y0vsntpEn8ZsvdxSOYYJ3P5+ojnphHGG4lQ8Tv+JVlub+NlvAb+QA7mAA9izptiqgCBLVFUaoKGyNK3u/3esbmm3htjIhShTZLjA1AzJuNUVHkGgwzzbIYfKuqWsAq7T7Aq9VKelB5B0McH7RsEgDHP22AbJ59/xl4KqEKYlJ5ateFCFKrxPn/WIDjG1MAEO+Q0SD1kDKtg/bOk0ag7vt6ksRGOTY0AsY7gGwdG3yhDJtFApnDzWYzzaKBYg3nlBpIg7bbre/G0ZoG+zthGJWwjARQGoUCGoX6v4tctrNb0ItS5oxk5g8lzBtNoAqMj6JPRw9RpI3rhADSfvhnywSIKjpOIBYAyh/BYrFQMBLDMFKly+VSiSAnx+7xb4XM2nhPCUItT8r8/GmUmmDX0a4slnxfT/d9+W2dpNwgCGSAV9KcQBVxLRnoUBoxm838Vpr210PWD1/xaN54lTtfAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="semantics"
+        title="semantics"
+        src="/static/74b173afc32b2b65bcc47e4e35e590f4/5a190/semantics.png"
+        srcset="/static/74b173afc32b2b65bcc47e4e35e590f4/772e8/semantics.png 200w,
+/static/74b173afc32b2b65bcc47e4e35e590f4/e17e5/semantics.png 400w,
+/static/74b173afc32b2b65bcc47e4e35e590f4/5a190/semantics.png 800w,
+/static/74b173afc32b2b65bcc47e4e35e590f4/d7ab4/semantics.png 1014w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2 id="grow-your-circuit-withmake-circuit" style="position:relative;"><a href="#grow-your-circuit-withmake-circuit" aria-label="grow your circuit withmake circuit permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grow your circuit with<code class="language-text">make-circuit</code></h2>
 <p>This syntax makes it easy to define a composite. The syntax is:</p>
 <div class="gatsby-highlight" data-language="racket"><pre class="language-racket"><code class="language-racket"><span class="token punctuation">(</span><span class="token function">make-circuit</span>
   #:external-pins <span class="token punctuation">(</span><span class="token function">o1</span> o2<span class="token punctuation">)</span>
